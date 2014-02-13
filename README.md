@@ -1,3 +1,3 @@
 I am readme
 
-I am a twice modified readme :)
+I am a conflict
