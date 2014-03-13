@@ -1,132 +1,7 @@
-body
-{
-	font-family: Tahoma;
-	font-size: 12px;
-	margin: 0px;
-}
-
-.frame
-{
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	padding: 10px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-
-.wrap
-{
-	position: relative;
-	height: 100%;
-	width: 100%;
-}
-
-.left, .right, .mid
-{
-	position: absolute;
-	left: 0;
-	right: 80%;
-	top: 0;
-	bottom: 0;
-	height: auto;
-	display: inline-block;
-}
-
-.mid
-{
-	left: 20%;
-	right: 20%;
-	top: 0;
-	bottom: 0;
-}
-
-.right
-{
-	left: 80%;
-	right: 0;
-	top: 0;
-	bottom: 0;
-}
-
-.lefttop
-{
-	position: absolute;
-	left: 0;
-	right: 50%;
-	top: 0;
-	bottom: 0;
-}
-
-.weather
-{
-	position: absolute;
-	left: 50%;
-	right: 0;
-	top: 0;
-	bottom: 0;	
-}
-
-.aw-widget-content
-{
-	background: none !important;
-
-}
-
-.aw-toggle
-{
-	display: none;
-}
-
-.test, div.aw-widget-current-inner, div.aw-widget-content
-{
-	border: none !important;
-}
-
-.fb-like-box, .fb-like-box > span, .fb-like-box > span > iframe
-{
-	width: 100% !important;
-}
-
-.fb-like-box:first-child
-{
-	position: absolute !important;
-	top: 0 !important;
-	bottom: 50% !important;
-	
-}
-
-.fb-like-box:last-child
-{
-	position: absolute !important;
-	top: 50% !important;
-	bottom: 0 !important;
-	
-}
-
 #clock
 {
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 50%;
+	width: 100%;
 }
-
-.posters
-{
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 50%;
-	bottom: 0;
-}
-
-
-
-/* CLOCK */
 
 #clock > #face
 {
@@ -135,7 +10,6 @@ body
 	border-radius: 100%;
 	border: 2px solid black;
 	position: relative;
-	box-sizing: border-box;
 }
 
 #clock > #digital
