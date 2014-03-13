@@ -3,6 +3,7 @@ body
 	font-family: Verdana;
 	font-size: 12pt;
 	overflow: hidden;
+	-webkit-user-select: none;
 }
 
 .info
@@ -20,6 +21,8 @@ body
 .info p
 {
 	margin: 4px;
+	
+	cursor: default;
 }
 
 .footer

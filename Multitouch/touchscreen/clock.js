@@ -23,14 +23,14 @@ $('document').ready(function() {
 	runClock();
 	
 	$( window ).resize(function() {
-		$('#clock').css('height',parseInt($('#clock').css('width')));
+		$('#face').css('height',parseInt($('#face').css('width')));
 		
-		var origin = (parseInt($('#clock').css('height'))/2) - (parseInt($('#clock').css('height'))*0.02);
+		var origin = (parseInt($('#face').css('height'))/2) - (parseInt($('#face').css('height'))*0.03);
 	
 		$('.secondIndicator').css('-webkit-transform-origin','0.5% '+origin+'px');
 		$('.hourIndicator').css('-webkit-transform-origin','0.5% '+origin+'px');
 		
-		var digitalHeight = parseInt($('#clock').css('width'))/8;
+		var digitalHeight = parseInt($('#face').css('width'))/8;
 		$('#digital')
 		.css('height',digitalHeight)
 		.css('font-size',digitalHeight*.8);
@@ -39,13 +39,15 @@ $('document').ready(function() {
 
 function buildClock()
 {
-	$('#clock').css('height',parseInt($('#clock').css('width')));
+	
 	$('#clock').append('<div id="face"></div>');
 	$('#clock').append('<div id="digital"></div>');
 	
+	$('#face').css('height',parseInt($('#face').css('width')));
+	
 	$('#digital').append('<span id="hour" class="time">'+screenHour+'</span><span class="colon">:</span><span id="minute" class="time">'+screenMinute+'</span><span class="colon">:</span><span id="second" class="time">'+screenSecond+'</span>');
 	
-	var digitalHeight = parseInt($('#clock').css('width'))/8;
+	var digitalHeight = parseInt($('#face').css('width'))/8;
 	$('#digital')
 		.css('height',digitalHeight)
 		.css('font-size',digitalHeight*.8);
@@ -63,7 +65,7 @@ function buildClock()
 		
 	}
 	
-	var origin = (parseInt($('#clock').css('height'))/2) - (parseInt($('#clock').css('height'))*0.02);
+	var origin = (parseInt($('#face').css('height'))/2) - (parseInt($('#face').css('height'))*0.03);
 	
 	$('.secondIndicator').css('-webkit-transform-origin','0.5% '+origin+'px');
 	$('.hourIndicator').css('-webkit-transform-origin','0.5% '+origin+'px');
