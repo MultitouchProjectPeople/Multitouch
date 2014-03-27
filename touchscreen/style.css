@@ -125,6 +125,7 @@ body
 }
 
 
+
 /* CLOCK */
 
 #clock > #face
@@ -243,29 +244,4 @@ body
 	top: 0;
 	background: black;
 	-webkit-transform:rotate(0deg);
-}
-
-/* Poster carousel */
-
-
-.poster_carousel > img
-{
-	display: none;
-}
-
-.poster_carousel > #images
-{
-	display: relative;
-	overflow: hidden;
-}
-
-.poster_carousel > #images > #image_container
-{
-	
-}
-
-.poster_carousel > #images > #image_container > img
-{
-	max-width: 100%;
-	max-height: 100%;
 }

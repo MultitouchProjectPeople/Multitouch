@@ -28,18 +28,12 @@ $('document').ready(function() {
 		menuOpen = false;
 	
 	/* Canvas functionality */
-	
-	Hammer($('.wrap'), {
-		prevent_default: true,
-		no_mouseevents: true
-		}).on("tap", function(event) {
-	
-		event.preventDefault();
+	$('.wrap').hammer().on("tap", function(event) {
 		if(menuOpen)
 			closeMenu();
-	}).on("doubletap", function(event) {
-		
-		event.preventDefault();
+	});
+	
+	$('.wrap').hammer().on("doubletap", function(event) {
 		
 		/* Store the currentID */
 		var itemID = currentID;
@@ -74,18 +68,12 @@ $('document').ready(function() {
 		itemRotationArray.push(getRotationDegrees($('#item_' + itemID)));
 		
 		/* Double tap function on a note */
-		Hammer($('#item_' + itemID), {
-		prevent_default: true,
-		no_mouseevents: true
-		}).on("doubletap", function(event) {
+		$('#item_' + itemID).hammer().on("doubletap", function(event) {
 			event.stopPropagation();
 		});
 		
 		/* An event that is fired when dragging starts */
-		Hammer($('#item_' + itemID), {
-		prevent_default: true,
-		no_mouseevents: true
-		}).on("touch", function(event) {
+		$('#item_' + itemID).hammer().on("dragstart", function(event) {
 			event.stopPropagation();
 			
 			/* Get the drag point in the note */
@@ -104,11 +92,7 @@ $('document').ready(function() {
 		});
 		
 		/* Drag event */
-		
-		Hammer($('#item_' + itemID), {
-		prevent_default: true,
-		no_mouseevents: true
-		}).on("drag", function(event) {
+		$('#item_' + itemID).hammer().on("drag", function(event) {
 			event.stopPropagation();
 			
 			/* Store positions */
@@ -122,10 +106,7 @@ $('document').ready(function() {
 		});
 		
 		/* Drag end event */
-		Hammer($('#item_' + itemID), {
-		prevent_default: true,
-		no_mouseevents: true
-		}).on("release", function(event) {
+		$('#item_' + itemID).hammer().on("dragend", function(event) {
 			event.stopPropagation();
 			
 			/* When drag ends store the new positions to corresponding places in position arrays */
@@ -134,10 +115,7 @@ $('document').ready(function() {
 		});
 		
 		/* Pinch / rotation event */
-		Hammer($('#item_' + itemID), {
-		prevent_default: true,
-		no_mouseevents: true
-		}).on("pinch", function(event) {
+		$('#item_' + itemID).hammer().on("pinch", function(event) {
 			event.stopPropagation();
 			
 			/* Set variables */
@@ -193,10 +171,7 @@ $('document').ready(function() {
 		});
 		
 		/* Event that fires when pinch / rotation event ends */
-		Hammer($('#item_' + itemID), {
-		prevent_default: true,
-		no_mouseevents: true
-		}).on("transformend", function(event) {
+		$('#item_' + itemID).hammer().on("transformend", function(event) {
 			event.stopPropagation();
 			
 			/* Store new values to corresponding arrays */
@@ -206,10 +181,7 @@ $('document').ready(function() {
 			itemRotationArray[($(event.target).attr('data-id') - 1)] = getRotationDegrees($(event.target));
 		});
 		
-		Hammer($('#item_' + itemID), {
-		prevent_default: true,
-		no_mouseevents: true
-		}).on("tap", function(event) {
+		$('#item_' + itemID).hammer().on("tap", function(event) {
 			event.stopPropagation();
 			
 			if(menuOpen)
@@ -224,10 +196,7 @@ $('document').ready(function() {
 		});
 		
 		/* Event to open note menu */
-		Hammer($('#item_' + itemID), {
-		prevent_default: true,
-		no_mouseevents: true
-		}).on("hold", function(event) {
+		$('#item_' + itemID).hammer().on("hold", function(event) {
 			event.stopPropagation();
 			
 			if(!menuOpen)
@@ -241,10 +210,7 @@ $('document').ready(function() {
 				currentMenu = $('#item_'+ $(event.target).attr('data-id') + '_menu');
 				
 				/* Add menu button functions on tap */
-				Hammer($('#item_'+ $(event.target).attr('data-id') + '_menu').find('#delete'), {
-		prevent_default: true,
-		no_mouseevents: true
-		}).on("tap", function(event) {
+				$('#item_'+ $(event.target).attr('data-id') + '_menu').find('#delete').hammer().on("tap", function(event) {
 					event.stopPropagation();
 					
 					/* Removing all event listeners related to the note */
@@ -315,16 +281,5 @@ $('document').ready(function() {
 		} else { var angle = 0; }
 		return (angle < 0) ? angle +=360 : angle;
 	}
-	
-	(function () {
-	  var blockContextMenu, myElement;
-
-	  blockContextMenu = function (evt) {
-		evt.preventDefault();
-	  };
-
-	  myElement = $('.wrap')[0];
-	  myElement.addEventListener('contextmenu', blockContextMenu);
-	})();
 
 });
