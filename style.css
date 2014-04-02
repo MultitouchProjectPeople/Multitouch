@@ -5,7 +5,7 @@ body
 	margin: 0px;
 }
 
-.frame
+.frame, #overlay
 {
 	position: absolute;
 	left: 0;
@@ -17,11 +17,27 @@ body
 	-moz-box-sizing: border-box;
 }
 
-.wrap
+#overlay
+{
+	background: black;
+}
+
+.wrap, .overlayIframe
 {
 	position: relative;
 	height: 100%;
 	width: 100%;
+	 -webkit-touch-callout: none;
+     -webkit-user-select: none;
+     -khtml-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+}
+
+.overlayIframe
+{
+	background: white;
 }
 
 .left, .right, .mid
@@ -114,6 +130,15 @@ body
 	right: 0;
 	bottom: 50%;
 }
+.rightmid
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 35%;
+	bottom: 0;
+}
+
 
 .posters
 {
@@ -269,3 +294,37 @@ body
 	max-width: 100%;
 	max-height: 100%;
 }
+
+/* Iframe & Buttons */
+
+.iframe 
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.roundButton
+{
+width:100px;
+height:100px; 
+background-color:#ff0000;
+border:1px solid #ff0000; 
+color:#fff;
+font-size:1.6em;
+-webkit-border-radius: 50px;
+border-radius: 50px;
+}
+
+.homeButton
+{
+width:100px;
+height:100px; 
+background-color:#ff0000;
+border:1px solid #ff0000; 
+color:#fff;
+font-size:1.6em;
+
+}
+
